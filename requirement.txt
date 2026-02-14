@@ -1,2 +1,3 @@
-pip install pypdf
 pip install pypdf pdf2image pytesseract python-docx Pillow
+
+

@@ -20,3 +20,9 @@ Answer Generation (exam format)
 Missing Basics Check
    ↓
 Final Output Formatter
+
+
+
+image extracter support .jpg, .jpeg, .png, .webp
+
+install Tesseract-OCR before running before running and add path to envoirement 

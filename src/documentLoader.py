@@ -2,11 +2,17 @@ import os           # For working with files and folders
 import json         # For saving data in JSON format
 from pathlib import Path 
 from dataclasses import dataclass
-from tkinter import Image
+import sys
+from PIL import Image
 from unittest import result
-from xml.dom.minidom import Document 
+from docx import Document
 from pypdf import PdfReader
 import pytesseract
+
+# Configure Tesseract path for Windows
+if sys.platform == "win32":
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
 #data container for document 
 @dataclass
 class ExtractionResult:
@@ -20,7 +26,6 @@ class ExtractionResult:
     formatting_notes:dict 
 
 #file detection 
-file_path = r"C:\Users\Sarvesh\Documents\2025Projects\examerAi\dataSet\sample.pdf"
 class DocumentDetector:
     """This class will detect file type."""
 
@@ -124,6 +129,7 @@ class DocumentLoader:
 
             all_text = ""
             page_info = []
+            warnings = []  
 
             formatting = {
                 "bold_count": 0,
@@ -175,9 +181,9 @@ class DocumentLoader:
                     }
                 )
 
-                confidence = 0.98
+            confidence = 0.98
 
-                return all_text ,page_info,confidence,formatting
+            return all_text, page_info, confidence, formatting, warnings, {}
 
         except Exception as e :
             return f"[DocumentLoader error: {e}]"    
@@ -189,13 +195,15 @@ class ImageExtractor:
     def extractImaege(file_path):
         """ take image and extract text from it usess orc """
 
+        warnings = []  
+        
         try:
             image = Image.open(file_path)
             image_extract_text = pytesseract.image_to_string(image)
 
 # Try to get confidence score
             try:
-                ocr_data = pytesseract.image_to_data(image,Output_type='dict')
+                ocr_data = pytesseract.image_to_data(image, output_type=pytesseract.Output.DICT)
 
                 confidence = (int(c) for c in ocr_data['conf'] if int(c) > 0)
                 avg_confidence = sum(confidence) / len(confidence) if confidence else 0.0
@@ -214,9 +222,11 @@ class ImageExtractor:
             }]    
 
             if confidence < 0.7:
-                warnings = ["Low OCR confidence, text may be inaccurate."]
+                warnings.append("Low OCR confidence, text may be inaccurate.")
             
-            return image_extract_text,page_info,confidence,warnings,
+            # Return 6 values to match the unpacking: text, mapping, confidence, warnings, formatting1, formatting2
+            return (image_extract_text, page_info, confidence, warnings, {}, {})
+
         except Exception as e:
             return f"[ImageExtractor error: {e}]"   
         
@@ -239,8 +249,8 @@ class DocumentsExtractor:
                 file_type="unknown",
                 page_count=0,
                 page_mapping=[],
-                confidence=0.0,
-                warnings=[validation_message],
+                confidence_score=0.0,
+                Warnings=[validation_message],
                 formatting_notes={}
             )
         
@@ -248,11 +258,11 @@ class DocumentsExtractor:
         file_type = DocumentDetector.detect_file_type(file_path)
 
         if file_type =="pdf":
-            text,mapping,confidence,warnings = PDFExtractor.extract(file_path)
+            text,page_count,mapping,confidence,warnings,formatting = PDFExtractor.extract(file_path)
         elif file_type == "docx" or file_type == "doc":
-            text,mapping,confidence,warnings = DocumentLoader.extract(file_path)
+            text,mapping,confidence,formatting,warnings,_ = DocumentLoader.extract(file_path)
         elif file_type == "image":
-            text,mapping,confidence,warnings = ImageExtractor.extractImaege(file_path)   
+            text,mapping,confidence,warnings,formatting,_ = ImageExtractor.extractImaege(file_path)   
         else:
             #unknow filew type
             return ExtractionResult(
@@ -260,13 +270,13 @@ class DocumentsExtractor:
                 file_type=file_type,
                 page_count=0,
                 page_mapping=[],
-                confidence=0.0,
+                confidence_score=0.0,
                 warnings=[f"Unsupported file type: {file_type}"],
                 formatting_notes={}
             )
         
         #step 4 check if extraction was successful
-        if confidence < 0 and len(text.strip()) > 0:
+        if confidence < 0.5 and len(text.strip()) > 0:
             warnings.append(f"⚠️ Low confidence ({confidence:.1%}). Check text carefully.")
         if len(text.strip()) == 0:
             warnings.append("⚠️ No text extracted. Check if the document is empty or if there was an extraction issue.")
@@ -276,8 +286,8 @@ class DocumentsExtractor:
                     file_type=file_type,
                     page_count=len(mapping),
                     page_mapping=mapping,
-                    confidence=confidence,
-                    warnings=warnings,
+                    confidence_score=confidence,
+                    Warnings=warnings,
                     formatting_notes={}
                 )
     #format and save 
@@ -344,4 +354,44 @@ class ResultFormatter:
             with open(output_path,'w',encoding='utf-8') as f :
                 json.dump(data,f,indent=4)
             print (f"Page mapping saved to {output_path}")
-        
+
+def main():
+
+
+    if len(sys.argv) < 2:
+            print("📖 DOCUMENT TEXT EXTRACTOR")
+            print("=" * 50)
+            print("\nUsage: python document_extractor.py <file> [output_file]")
+            print("\nSupported files: PDF, DOCX, JPG, PNG, BMP, GIF, TIFF")
+            print("\nExamples:")
+            print("  python document_extractor.py report.pdf")
+            print("  python document_extractor.py document.docx output.txt")
+            print("\nIf you dont give output file ,result shown on screem. ")
+            sys.exit(1)
+
+            input_file = sys.argv[1]
+            output_file = sys.argv[2] if len(sys.argv) > 2 else None
+
+            print(f"\n Extracting text from: {input_file}\n")
+
+            result = DocumentsExtractor.extract(input_file)
+
+            formatted_result = ResultFormatter.format_text_with_mapping(result)
+
+            if output_file:
+                with open(output_file,'w',encoding='utf-8') as f:
+                    f.write(formatted_result)
+
+                print(f"Formatted result saved to {output_file}")
+            else:
+                print(formatted_result)
+
+if __name__=="__main__":
+    main()
+
+    # result = DocumentsExtractor.extract("../dataSet/Fundamentals_of_Cybersecurity.pdf")
+    # print(result.raw_text)
+    
+    # with open("../dataSet/OutputData/output.txt", "w", encoding="utf-8") as f:
+    #     f.write(result.raw_text)
+    # print("\nOutput saved to: ../dataSet/OutputData/output.txt")
