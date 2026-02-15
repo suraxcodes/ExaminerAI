@@ -1,5 +1,5 @@
-import os           # For working with files and folders     
-import json         # For saving data in JSON format
+import os               
+import json         
 from pathlib import Path 
 from dataclasses import dataclass
 import sys
@@ -9,7 +9,9 @@ from docx import Document
 from pypdf import PdfReader
 import pytesseract
 
-# Configure Tesseract path for Windows
+from documentsCLearing import DocumentCleaner
+
+
 if sys.platform == "win32":
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
@@ -19,13 +21,13 @@ class ExtractionResult:
     """it going to contain the extracted text """
     raw_text:str
     file_type:str
-    page_count:int # of pages document
-    page_mapping:list # list of page numbers and with their corresponding text
+    page_count:int 
+    page_mapping:list 
     confidence_score:float 
-    Warnings:list 
+    warnings:list 
     formatting_notes:dict 
 
-#file detection 
+
 class DocumentDetector:
     """This class will detect file type."""
 
@@ -47,10 +49,9 @@ class DocumentDetector:
     
     def validated_file(file_path):
         """ check for file existence and valid type"""
-        #check for file exist 
+
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"File not found: {file_path}")
-        #check file is acce3seble
         if not os.access(file_path, os.R_OK):
             raise PermissionError(f"File is not readable: {file_path}")
         
@@ -75,13 +76,11 @@ class PDFExtractor:
             page_info = []
             total_confidence = 0.0
 
-            #how many pages in pdf
             num_pages = len(pdf_reader.pages)
 
             for page_number,page in enumerate(pdf_reader.pages,1):
                 
                 char_start = len(all_text)
-                # Extract text from this page
                 page_text = page.extract_text()
 
                 if page_text is None :
@@ -110,12 +109,11 @@ class PDFExtractor:
 
             avg_confidence = total_confidence / num_pages if num_pages > 0 else 0.0
 
-            return all_text, num_pages, page_info, avg_confidence, warmings, {}
+            return all_text, page_info, avg_confidence, warmings, {}, num_pages
         
         except Exception as e:
             return f"[PDF error: {e}]"
 
-# document loader class
 class DocumentLoader:
     """extract text from doucment """
 
@@ -147,16 +145,16 @@ class DocumentLoader:
 
                 style_name = paragraph.style.name
                 is_heading = "Heading" in style_name
-# If it's a heading, add a marker so we know it's special
+
                 if is_heading:
                     formatting["heading"]+=1
-
                     try:
                         level = int(style_name[-1])
                     except:
-                        level = 0
-                        para_text = f"[HEADING]{level} {para_text}"
-         # Check if this is a list item (bullet point)        
+                        level = 1
+                    # Add heading marker to text
+                    para_text = f"[HEADING {level}] {para_text}"
+                
                 if style_name.startswith("List"):
                     formatting["list"]+=1
                     para_text = f"[LIST] {para_text}"
@@ -183,7 +181,8 @@ class DocumentLoader:
 
             confidence = 0.98
 
-            return all_text, page_info, confidence, formatting, warnings, {}
+            page_count = max(1, len(all_text) // 3000)  
+            return all_text, page_info, confidence, warnings, formatting, page_count
 
         except Exception as e :
             return f"[DocumentLoader error: {e}]"    
@@ -205,10 +204,11 @@ class ImageExtractor:
             try:
                 ocr_data = pytesseract.image_to_data(image, output_type=pytesseract.Output.DICT)
 
-                confidence = (int(c) for c in ocr_data['conf'] if int(c) > 0)
-                avg_confidence = sum(confidence) / len(confidence) if confidence else 0.0
+                valid_confidences = [int(c) for c in ocr_data['conf'] if int(c) > 0]
+                avg_confidence = sum(valid_confidences) / len(valid_confidences) if valid_confidences else 0.0
 
-                confidence = avg_confidence//100.0
+               
+                confidence = avg_confidence / 100.0
 
             except:
                 confidence = 0.7
@@ -224,8 +224,8 @@ class ImageExtractor:
             if confidence < 0.7:
                 warnings.append("Low OCR confidence, text may be inaccurate.")
             
-            # Return 6 values to match the unpacking: text, mapping, confidence, warnings, formatting1, formatting2
-            return (image_extract_text, page_info, confidence, warnings, {}, {})
+ 
+            return (image_extract_text, page_info, confidence, warnings, {}, 1)
 
         except Exception as e:
             return f"[ImageExtractor error: {e}]"   
@@ -250,7 +250,7 @@ class DocumentsExtractor:
                 page_count=0,
                 page_mapping=[],
                 confidence_score=0.0,
-                Warnings=[validation_message],
+                warnings=[validation_message],
                 formatting_notes={}
             )
         
@@ -258,11 +258,11 @@ class DocumentsExtractor:
         file_type = DocumentDetector.detect_file_type(file_path)
 
         if file_type =="pdf":
-            text,page_count,mapping,confidence,warnings,formatting = PDFExtractor.extract(file_path)
+            text, mapping, confidence, warnings, formatting, page_count = PDFExtractor.extract(file_path)
         elif file_type == "docx" or file_type == "doc":
-            text,mapping,confidence,formatting,warnings,_ = DocumentLoader.extract(file_path)
+            text, mapping, confidence, warnings, formatting, page_count = DocumentLoader.extract(file_path)
         elif file_type == "image":
-            text,mapping,confidence,warnings,formatting,_ = ImageExtractor.extractImaege(file_path)   
+            text, mapping, confidence, warnings, formatting, page_count = ImageExtractor.extractImaege(file_path)   
         else:
             #unknow filew type
             return ExtractionResult(
@@ -275,20 +275,42 @@ class DocumentsExtractor:
                 formatting_notes={}
             )
         
-        #step 4 check if extraction was successful
+        # Clean the extracted text
+        print("Cleaning extracted text...")
+        cleaner = DocumentCleaner()
+        cleaning_result = cleaner.clean(
+            text,
+            remove_page_numbers=True,
+            remove_headers_footers=True,
+            remove_repeated_titles=True,
+            remove_watermarks=True,
+            normalize_bullets=True,
+            normalize_spacing=True,
+            fix_encoding=True
+        )
+        
+        text = cleaning_result.cleaned_text
+        
+
+        if cleaning_result.issues_fixed:
+            cleaning_summary = f"Cleaned: {', '.join(cleaning_result.issues_fixed[:3])}"
+            if len(cleaning_result.issues_fixed) > 3:
+                cleaning_summary += f" (+{len(cleaning_result.issues_fixed) - 3} more)"
+            warnings.append(cleaning_summary)
+        
         if confidence < 0.5 and len(text.strip()) > 0:
-            warnings.append(f"⚠️ Low confidence ({confidence:.1%}). Check text carefully.")
+            warnings.append(f"Low confidence ({confidence:.1%}). Check text carefully.")
         if len(text.strip()) == 0:
-            warnings.append("⚠️ No text extracted. Check if the document is empty or if there was an extraction issue.")
+            warnings.append("No text extracted. Check if the document is empty or if there was an extraction issue.")
 
         return ExtractionResult(
                     raw_text=text,
                     file_type=file_type,
-                    page_count=len(mapping),
+                    page_count=page_count,
                     page_mapping=mapping,
                     confidence_score=confidence,
-                    Warnings=warnings,
-                    formatting_notes={}
+                    warnings=warnings,
+                    formatting_notes=formatting
                 )
     #format and save 
 class ResultFormatter:
@@ -307,23 +329,19 @@ class ResultFormatter:
             - The text with page markers
             """
 
-            # Create the report
             output = "=" * 80 + "\n"
             output += "DOCUMENT EXTRACTION REPORT\n"
             output += "=" * 80 + "\n\n"
 
-            # Add summary info
             output += f"File Type: {result.file_type.upper()}\n"
             output += f"Pages: {result.page_count}\n"
-            output += f"Quality: {result.confidence:.1%}\n"
+            output += f"Quality: {result.confidence_score:.1%}\n"
 
-            # Add any warnings
             if result.warnings:
                 output += "\nWARNINGS:\n"
                 for warning in result.warnings:
                     output += f"  {warning}\n"
 
-            # Add the extracted text
             output += "\n" + "=" * 80 + "\n"
             output += "EXTRACTED TEXT\n"
             output += "=" * 80 + "\n\n"
@@ -341,7 +359,7 @@ class ResultFormatter:
                 "metadata": {
                     "file_type": result.file_type,
                     "page_count": result.page_count,
-                    "confidence": result.confidence,
+                    "confidence": result.confidence_score,
                     "warnings": result.warnings
                 },
                 "page_mapping": result.page_mapping,
@@ -359,7 +377,7 @@ def main():
 
 
     if len(sys.argv) < 2:
-            print("📖 DOCUMENT TEXT EXTRACTOR")
+            print("DOCUMENT TEXT EXTRACTOR")
             print("=" * 50)
             print("\nUsage: python document_extractor.py <file> [output_file]")
             print("\nSupported files: PDF, DOCX, JPG, PNG, BMP, GIF, TIFF")
@@ -369,22 +387,22 @@ def main():
             print("\nIf you dont give output file ,result shown on screem. ")
             sys.exit(1)
 
-            input_file = sys.argv[1]
-            output_file = sys.argv[2] if len(sys.argv) > 2 else None
+    input_file = sys.argv[1]
+    output_file = sys.argv[2] if len(sys.argv) > 2 else None
 
-            print(f"\n Extracting text from: {input_file}\n")
+    print(f"\n Extracting text from: {input_file}\n")
 
-            result = DocumentsExtractor.extract(input_file)
+    result = DocumentsExtractor.extract(input_file)
 
-            formatted_result = ResultFormatter.format_text_with_mapping(result)
+    formatted_result = ResultFormatter.format_text_with_mapping(result)
 
-            if output_file:
-                with open(output_file,'w',encoding='utf-8') as f:
-                    f.write(formatted_result)
+    if output_file:
+        with open(output_file,'w',encoding='utf-8') as f:
+            f.write(formatted_result)
 
-                print(f"Formatted result saved to {output_file}")
-            else:
-                print(formatted_result)
+        print(f"Formatted result saved to {output_file}")
+    else:
+        print(formatted_result)
 
 if __name__=="__main__":
     main()

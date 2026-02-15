@@ -1,0 +1,1995 @@
+{
+  "chapters": [
+    {
+      "title": "Unit 1 :",
+      "level": 1,
+      "topics": [],
+      "line_start": 0,
+      "line_end": 1
+    },
+    {
+      "title": "Introduction to E-Commerce",
+      "level": 1,
+      "topics": [
+        {
+          "title": "Topics Covered",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 4,
+          "line_end": 4
+        },
+        {
+          "title": "• Meaning",
+          "level": 2,
+          "content": "• Meaning",
+          "content_type": "bullet_block",
+          "line_start": 5,
+          "line_end": 6
+        },
+        {
+          "title": "• Nature and scope of e-commerce • History of e-co...",
+          "level": 2,
+          "content": "• Nature and scope of e-commerce • History of e-commerce",
+          "content_type": "bullet_block",
+          "line_start": 5,
+          "line_end": 8
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Business application of e-commerce • E-commerce Models (B2B, B2C, C2C, B2G) • Advantage and disadvantage of e-commerce • Application of M-commerce",
+          "content_type": "bullet_block",
+          "line_start": 5,
+          "line_end": 10
+        },
+        {
+          "title": "What is Commerce?",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 12,
+          "line_end": 12
+        },
+        {
+          "title": "Traditional commerce may be defined as",
+          "level": 2,
+          "content": "Traditional commerce may be defined as: - The exchange or buying and selling of commodities; esp. the exchange of merchandise, on a large scale, between different places or communities; extended trade or traffic.",
+          "content_type": "definition",
+          "line_start": 13,
+          "line_end": 14
+        },
+        {
+          "title": "E-Commerce vs. Traditional Commerce E Commerce",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 16,
+          "line_end": 16
+        },
+        {
+          "title": "Traditional Commerce",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 18,
+          "line_end": 18
+        },
+        {
+          "title": "➢Customers can easily identify and authenticate a ...",
+          "level": 2,
+          "content": "➢Customers can easily identify and authenticate a merchant by seeing him directly.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 20
+        },
+        {
+          "title": "➢Customers can directly talk to merchant. Communic...",
+          "level": 2,
+          "content": "➢Customers can directly talk to merchant. Communication pages is not in the hands of a third party.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 22
+        },
+        {
+          "title": "➢Customers can interact with other customers and g...",
+          "level": 2,
+          "content": "➢Customers can interact with other customers and gain feedback about merchant from other customers.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 24
+        },
+        {
+          "title": "➢It is not available all the time.",
+          "level": 2,
+          "content": "➢It is not available all the time.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 26
+        },
+        {
+          "title": "➢It is a slow method.",
+          "level": 2,
+          "content": "➢It is a slow method.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 28
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "➢Customers just give cash & there is no need to give their name and address. So there is no worry about security of personal information.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 30
+        },
+        {
+          "title": "➢ It is not easy to identify the merchant.",
+          "level": 2,
+          "content": "➢ It is not easy to identify the merchant.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 32
+        },
+        {
+          "title": "➢Customers can only see the representation",
+          "level": 2,
+          "content": "➢Customers can only see the representation",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 34
+        },
+        {
+          "title": "&",
+          "level": 2,
+          "content": "&",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 36
+        },
+        {
+          "title": "can only see the web.",
+          "level": 2,
+          "content": "can only see the web.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 38
+        },
+        {
+          "title": "➢Customers cannot interact with other customers.",
+          "level": 2,
+          "content": "➢Customers cannot interact with other customers.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 40
+        },
+        {
+          "title": "➢It is always 24*7*365 hours",
+          "level": 2,
+          "content": "➢It is always 24*7*365 hours",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 42
+        },
+        {
+          "title": "➢It is a fast method.",
+          "level": 2,
+          "content": "➢It is a fast method.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 44
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "➢Customers have to give their personal information to purchase the product so there is security issues.",
+          "content_type": "paragraph",
+          "line_start": 19,
+          "line_end": 46
+        }
+      ],
+      "line_start": 2,
+      "line_end": 47
+    },
+    {
+      "title": "Introduction to Electronic Commerce",
+      "level": 1,
+      "topics": [
+        {
+          "title": "What is E-Commerce?",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 50,
+          "line_end": 50
+        },
+        {
+          "title": "Definition",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 52,
+          "line_end": 52
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• E-commerce is a general term for any type of business, or commercial transaction that involves the transfer of information across the Internet.",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 54
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• This covers a range of different types of businesses from consumer-based retail sites, like Amazon.com, through auction and music sites like eBay or MP3.com, to business exchanges trading goods or services between corporations.",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 56
+        },
+        {
+          "title": "Meaning of e-commerce",
+          "level": 2,
+          "content": "Meaning of e-commerce",
+          "content_type": "paragraph",
+          "line_start": 53,
+          "line_end": 58
+        },
+        {
+          "title": "• It is the business option in which the transacti...",
+          "level": 2,
+          "content": "• It is the business option in which the transactions take place via telecommunications networks.",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 60
+        },
+        {
+          "title": "• It changes the way you shop, learn , interact an...",
+          "level": 2,
+          "content": "• It changes the way you shop, learn , interact and transact business.",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 62
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It includes all inter-company and intra-company functions (such as marketing, finance, manufacturing, selling, and negotiation) that enables commerce and use of electronic mail, EDI, file transfer, video conferencing, workflow or interaction with a remote computer.",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 64
+        },
+        {
+          "title": "• It covers : Online point-of-sale & Transaction p...",
+          "level": 2,
+          "content": "• It covers : Online point-of-sale & Transaction processing - Electronic Data Interchange (EDI)",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 66
+        },
+        {
+          "title": "• Electronic Funds Transfer",
+          "level": 2,
+          "content": "• Electronic Funds Transfer",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 68
+        },
+        {
+          "title": "• Electronic Banking",
+          "level": 2,
+          "content": "• Electronic Banking",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 70
+        },
+        {
+          "title": "• Interactive Marketing",
+          "level": 2,
+          "content": "• Interactive Marketing",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 72
+        },
+        {
+          "title": "• Supply Chain Management",
+          "level": 2,
+          "content": "• Supply Chain Management",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 74
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Enterprise Collaboration includes : e-mail, voice mail, forums, Data conferencing, video conferencing, electronic meeting systems",
+          "content_type": "bullet_block",
+          "line_start": 53,
+          "line_end": 76
+        },
+        {
+          "title": "Nature of E-Commerce",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 78,
+          "line_end": 78
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• E-commerce is a modern business methodology, which helps the companies and the consumers to have better business facilities through less cost while improving the quality of goods and services and increasing the speed of transactions.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 80
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• E-commerce covers online selling and transaction, web retailing and wholesaling, electronic data and fund transfer, electronic banking interactive marketing etc.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 82
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It involves multimedia, advertising, product information, customer support on the World Wide Web via Internet, payment mechanism through banks etc.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 84
+        },
+        {
+          "title": "• The scope of e-commerce is very wide.",
+          "level": 2,
+          "content": "• The scope of e-commerce is very wide.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 86
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It connects the management of the enterprises to the various aspects of trading viz, suppliers, distributors, retailers, consumers and other traders on the global e-commerce infrastructure.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 88
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• The enterprise provides product development, conferencing, accounting, financial planning, logistics etc. through e-commerce.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 90
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• With suppliers it mainly concerns product sourcing, information, purchase process, supplier management etc.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 92
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• With distributors and retailers it involves market response, inventory, product information, order fulfillment, accounts etc.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 94
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• With consumers it is mainly web marketing, e-shopping, information and online services, trading, services and sales etc.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 96
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• On the global e-commerce infrastructure, it mainly is about security, e-banking, legal issues, e-market information, human computer interface etc.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 98
+        },
+        {
+          "title": "• The First Generation of E- commerce (1995 - 1997...",
+          "level": 2,
+          "content": "• The First Generation of E- commerce (1995 - 1997)",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 100
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• This generation involves direct online sale of product to customers. In other words, the first generation established the concept of business to customer(B2C) e- commerce, where organization started selling their product directly to customers. The idea of online sales was implemented by Amazon.cm, which is the first largest retailer to provide an online retail outlet to its customers.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 102
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• The Second Generation of E-commerce (1997-2001): This generation introduced the concepts of consumer-to-consumer(C2C) and business-to business (B2B) e-commerce. This generation marked the evolution of auction sites, such as eBay, which facilitated consumers to sell and purchase product to and from other consumers. In addition, it allowed business organization to sell products and avail services from other organizations.",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 104
+        },
+        {
+          "title": "• The Third Generation of E-commerce (2001-2009)",
+          "level": 2,
+          "content": "• The Third Generation of E-commerce (2001-2009)",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 106
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "This generation introduced an online mall, where business organization as well as consumers could sell their products. This online mall served as a large online market, offering a variety of products the customer. The third generation of e commerce is also marked by the establishment of individual web stores for small merchants and sellers.",
+          "content_type": "paragraph",
+          "line_start": 79,
+          "line_end": 108
+        },
+        {
+          "title": "• The Fourth generation(2009- present)",
+          "level": 2,
+          "content": "• The Fourth generation(2009- present)",
+          "content_type": "bullet_block",
+          "line_start": 79,
+          "line_end": 110
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "This generation introduces the concepts f business-to-business-to-consumer to-consumer (B2B2C2C) e-commerce. The B2B2C2C concept allows consumer to sell their product online and provides services to other consumers without maintaining any inventory. The concept is based on the cross selling products, where a business organization manufactures a product that is supplied, to a consumer through another business organization, serving as an intermediary. The consumer then sells the product to other consumers.",
+          "content_type": "paragraph",
+          "line_start": 79,
+          "line_end": 112
+        },
+        {
+          "title": "Generating Demand",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 114,
+          "line_end": 114
+        },
+        {
+          "title": "• Get people to your site, then turn the lookers i...",
+          "level": 2,
+          "content": "• Get people to your site, then turn the lookers into buyers.",
+          "content_type": "bullet_block",
+          "line_start": 115,
+          "line_end": 116
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Advertising on the internet, which is discussed in more detail later, is one way to get people to your site.",
+          "content_type": "bullet_block",
+          "line_start": 115,
+          "line_end": 118
+        },
+        {
+          "title": "Ordering & Fulfillment",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 120,
+          "line_end": 120
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Once a consumer is at your site you need them to place an order by making sure the ordering process is simple and easy to use. Next, fill and ship your customers' orders in a timely manner and keep them informed of the progress of their order.",
+          "content_type": "bullet_block",
+          "line_start": 121,
+          "line_end": 122
+        },
+        {
+          "title": "Process Payment",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 124,
+          "line_end": 124
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Choose one of the available methods for processing payments: Cash Model, Check Model or Credit Model. The processing of payments is discussed in more detail later.",
+          "content_type": "bullet_block",
+          "line_start": 125,
+          "line_end": 126
+        },
+        {
+          "title": "Service & Support",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 128,
+          "line_end": 128
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Meeting the needs of your customers by providing exceptional customer support is imperative. Saving information about your customers can make it easier for them to place their next order. This information can also be used to offer them special discounts on the products they buy, enticing their return.",
+          "content_type": "bullet_block",
+          "line_start": 129,
+          "line_end": 130
+        },
+        {
+          "title": "Security",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 132,
+          "line_end": 132
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Consumers should know that their transactions over the internet are secure. Using SSL (Secure Sockets Layer) and digital certificates provide the necessary security. Security is discussed in more detail later.",
+          "content_type": "bullet_block",
+          "line_start": 133,
+          "line_end": 134
+        },
+        {
+          "title": "How does e-commerce work?",
+          "level": 2,
+          "content": "How does e-commerce work?",
+          "content_type": "paragraph",
+          "line_start": 133,
+          "line_end": 136
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Before you can start selling your goods and services online there are several steps that should be completed.",
+          "content_type": "bullet_block",
+          "line_start": 133,
+          "line_end": 138
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• He decides that he wants to purchase something, so he is moved to the online transaction server, where all the information he gives is encrypted.",
+          "content_type": "bullet_block",
+          "line_start": 133,
+          "line_end": 140
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Once he has placed his order, the information moves through a private gateway to a Processing Network, where the issuing and acquiring banks complete or deny the transaction.",
+          "content_type": "bullet_block",
+          "line_start": 133,
+          "line_end": 142
+        },
+        {
+          "title": "Categories of E-Commerce Applications",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 144,
+          "line_end": 144
+        },
+        {
+          "title": "E-commerce systems are classified by Application t...",
+          "level": 2,
+          "content": "E-commerce systems are classified by Application type as: - Electronic Markets",
+          "content_type": "paragraph",
+          "line_start": 145,
+          "line_end": 146
+        },
+        {
+          "title": "• Electronic Data Interchange (EDI)",
+          "level": 2,
+          "content": "• Electronic Data Interchange (EDI)",
+          "content_type": "bullet_block",
+          "line_start": 145,
+          "line_end": 148
+        },
+        {
+          "title": "• Internet Commerce",
+          "level": 2,
+          "content": "• Internet Commerce",
+          "content_type": "bullet_block",
+          "line_start": 145,
+          "line_end": 150
+        },
+        {
+          "title": "Electronic",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 152,
+          "line_end": 152
+        },
+        {
+          "title": "Markets",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 154,
+          "line_end": 154
+        },
+        {
+          "title": "EDI",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 156,
+          "line_end": 156
+        },
+        {
+          "title": "Internet",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 158,
+          "line_end": 158
+        },
+        {
+          "title": "Commerce",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 160,
+          "line_end": 160
+        },
+        {
+          "title": "• Electronic Markets:",
+          "level": 2,
+          "content": "• Electronic Markets:",
+          "content_type": "bullet_block",
+          "line_start": 161,
+          "line_end": 162
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Principal function of an electronic market is to facilitate the search for the required product or service.",
+          "content_type": "bullet_block",
+          "line_start": 161,
+          "line_end": 164
+        },
+        {
+          "title": "• Eg. Airline booking system",
+          "level": 2,
+          "content": "• Eg. Airline booking system",
+          "content_type": "bullet_block",
+          "line_start": 161,
+          "line_end": 166
+        },
+        {
+          "title": "• Electronic Data Interchange (EDI):",
+          "level": 2,
+          "content": "• Electronic Data Interchange (EDI):",
+          "content_type": "bullet_block",
+          "line_start": 161,
+          "line_end": 168
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• EDI provides for the efficient transaction of recurrent trade exchanges between commercial organizations.",
+          "content_type": "bullet_block",
+          "line_start": 161,
+          "line_end": 170
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• EDI removes the need for printed orders and invoices and avoids the delays and errors implicit in paper handling.",
+          "content_type": "bullet_block",
+          "line_start": 161,
+          "line_end": 172
+        },
+        {
+          "title": "• Eg. Large supermarket chains or vehicle assemble...",
+          "level": 2,
+          "content": "• Eg. Large supermarket chains or vehicle assemblers when trading with their suppliers.",
+          "content_type": "bullet_block",
+          "line_start": 161,
+          "line_end": 174
+        },
+        {
+          "title": "• Internet Commerce:",
+          "level": 2,
+          "content": "• Internet Commerce:",
+          "content_type": "bullet_block",
+          "line_start": 161,
+          "line_end": 176
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• The Internet can be used for advertising goods and services and make once-off sales of a wide range of goods.",
+          "content_type": "bullet_block",
+          "line_start": 161,
+          "line_end": 178
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Eg. The Internet can be used for the purchase of books that are then delivered by post or the booking of tickets that can be picked up by the clients when they arrive.",
+          "content_type": "bullet_block",
+          "line_start": 161,
+          "line_end": 180
+        },
+        {
+          "title": "Business Applications",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 182,
+          "line_end": 182
+        },
+        {
+          "title": "• E-Commerce applications in Manufacturing • E-Com...",
+          "level": 2,
+          "content": "• E-Commerce applications in Manufacturing • E-Commerce applications in Wholesale",
+          "content_type": "bullet_block",
+          "line_start": 183,
+          "line_end": 184
+        },
+        {
+          "title": "• E-Commerce applications in Retail",
+          "level": 2,
+          "content": "• E-Commerce applications in Retail",
+          "content_type": "bullet_block",
+          "line_start": 183,
+          "line_end": 186
+        },
+        {
+          "title": "• E-Commerce applications in Service Sector",
+          "level": 2,
+          "content": "• E-Commerce applications in Service Sector",
+          "content_type": "bullet_block",
+          "line_start": 183,
+          "line_end": 188
+        },
+        {
+          "title": "E-commerce in Manufacturing",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 190,
+          "line_end": 190
+        },
+        {
+          "title": "• Transformation of raw materials into finished go...",
+          "level": 2,
+          "content": "• Transformation of raw materials into finished goods for sale is Manufacturing.",
+          "content_type": "bullet_block",
+          "line_start": 191,
+          "line_end": 192
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Production of goods or services in a complex web of contracts & co-operation is supply chain or value system.",
+          "content_type": "bullet_block",
+          "line_start": 191,
+          "line_end": 194
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Manufacturing requires various components, Sub assemblies including transportation, storage, paper work.",
+          "content_type": "bullet_block",
+          "line_start": 191,
+          "line_end": 196
+        },
+        {
+          "title": "Supply chain transaction adds cost without intrins...",
+          "level": 2,
+          "content": "Supply chain transaction adds cost without intrinsic value •",
+          "content_type": "paragraph",
+          "line_start": 191,
+          "line_end": 198
+        },
+        {
+          "title": "E-commerce applied to Supply Chain reduce cost or",
+          "level": 2,
+          "content": "E-commerce applied to Supply Chain reduce cost or",
+          "content_type": "paragraph",
+          "line_start": 191,
+          "line_end": 200
+        },
+        {
+          "title": "•",
+          "level": 2,
+          "content": "•",
+          "content_type": "paragraph",
+          "line_start": 191,
+          "line_end": 202
+        },
+        {
+          "title": "improve service",
+          "level": 2,
+          "content": "improve service",
+          "content_type": "paragraph",
+          "line_start": 191,
+          "line_end": 204
+        },
+        {
+          "title": "E-commerce in Wholesale",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 206,
+          "line_end": 206
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Sale of goods & services in large quantities at lower prices to someone other than consumers - Wholesale.",
+          "content_type": "bullet_block",
+          "line_start": 207,
+          "line_end": 208
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Sale of goods to retailers, to industrial, commercial, other business users - middle person or distributors - WHOLE SALE.",
+          "content_type": "bullet_block",
+          "line_start": 207,
+          "line_end": 210
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Physical assemble, sort & grade goods in large lots, breaking bulk, repacking & redistributing in smaller lots is all Wholesale.",
+          "content_type": "bullet_block",
+          "line_start": 207,
+          "line_end": 212
+        },
+        {
+          "title": "E.g. Pharmaceuticals - store, refrigerate, deliver...",
+          "level": 2,
+          "content": "E.g. Pharmaceuticals - store, refrigerate, deliver & install goods, engage in sales promotion",
+          "content_type": "paragraph",
+          "line_start": 207,
+          "line_end": 214
+        },
+        {
+          "title": "Problems of Traditional wholesale system :-",
+          "level": 2,
+          "content": "Problems of Traditional wholesale system :-",
+          "content_type": "paragraph",
+          "line_start": 207,
+          "line_end": 216
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "1. Wholesale markets can't compete with foreign wholesale enterprises with advanced management & operation methods.",
+          "content_type": "list",
+          "line_start": 207,
+          "line_end": 218
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "2. Wholesale Operating Costsincluding staffing,setting up local warehouses, establishing distribution centres are high.",
+          "content_type": "list",
+          "line_start": 207,
+          "line_end": 220
+        },
+        {
+          "title": "3. Staff quality and large land supply & other res...",
+          "level": 2,
+          "content": "3. Staff quality and large land supply & other resources affect wholesale market.",
+          "content_type": "list",
+          "line_start": 207,
+          "line_end": 222
+        },
+        {
+          "title": "4. Wholesale sector is characterized by its high i...",
+          "level": 2,
+          "content": "4. Wholesale sector is characterized by its high input & low output.",
+          "content_type": "list",
+          "line_start": 207,
+          "line_end": 224
+        },
+        {
+          "title": "Role of E-Commerce in Wholesale :-",
+          "level": 2,
+          "content": "Role of E-Commerce in Wholesale :-",
+          "content_type": "paragraph",
+          "line_start": 207,
+          "line_end": 226
+        },
+        {
+          "title": "1. Lower Operating costs, accessto information & q...",
+          "level": 2,
+          "content": "1. Lower Operating costs, accessto information & quick response.",
+          "content_type": "list",
+          "line_start": 207,
+          "line_end": 228
+        },
+        {
+          "title": "2. Global marketing in less time & low cost.",
+          "level": 2,
+          "content": "2. Global marketing in less time & low cost.",
+          "content_type": "list",
+          "line_start": 207,
+          "line_end": 230
+        },
+        {
+          "title": "3. Gaining the competitive edge by wholesalers as ...",
+          "level": 2,
+          "content": "3. Gaining the competitive edge by wholesalers as like MNC's.",
+          "content_type": "list",
+          "line_start": 207,
+          "line_end": 232
+        },
+        {
+          "title": "4. Intermediaries are affected.",
+          "level": 2,
+          "content": "4. Intermediaries are affected.",
+          "content_type": "list",
+          "line_start": 207,
+          "line_end": 234
+        },
+        {
+          "title": "5. It offers wide range of information, intermedia...",
+          "level": 2,
+          "content": "5. It offers wide range of information, intermediary and business services.",
+          "content_type": "list",
+          "line_start": 207,
+          "line_end": 236
+        },
+        {
+          "title": "E-Commerce in Retail",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 238,
+          "line_end": 238
+        },
+        {
+          "title": "• Selling Products or Servicesto consumers for per...",
+          "level": 2,
+          "content": "• Selling Products or Servicesto consumers for personal use is Retailing.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 240
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• E.g., Department stores, Discountstores, Services providers like dentist, hotels, on-line storeslike Amazon.com.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 242
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Retailers provideslink between consumers & manufacturers - adding value to products by making it easier for manufacturers to sell and consumersto buy.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 244
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Costly and time consuming to locate, contact and make a purchase from the manufacturer every time to buy.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 246
+        },
+        {
+          "title": "• Also costly for the manufacturers to locate and ...",
+          "level": 2,
+          "content": "• Also costly for the manufacturers to locate and distribute them to consumers individually.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 248
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Brings multitudes of manufacturers and consumers together at a single point - makes it possible for products to be sold and business to be done.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 250
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Services by retailers make it less risky & more fun to buy products. • Retailers answers questions, display products for consumers to see before buying.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 252
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Retailers provides extra services from personal shopping to gift wrapping & delivery, thus increasing product value.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 254
+        },
+        {
+          "title": "Role of E-Commerce in Retailing :-",
+          "level": 2,
+          "content": "Role of E-Commerce in Retailing :-",
+          "content_type": "paragraph",
+          "line_start": 239,
+          "line_end": 256
+        },
+        {
+          "title": "• Internet made retailing an exciting & challengin...",
+          "level": 2,
+          "content": "• Internet made retailing an exciting & challenging field recently.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 258
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• The vastness of cyberspace makes it difficult for a consumer to purchase every product he/she uses directly.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 260
+        },
+        {
+          "title": "• Nature of business due to this reason is undergo...",
+          "level": 2,
+          "content": "• Nature of business due to this reason is undergoing fundamental changes.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 262
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• On-line retailerslike Amazon.com bring assortments of products for sale as like mortal retailers do.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 264
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Traditional retailers are needed for those who need personal check of products, and for personal services which need face-to-face interaction with the consumer. Eg. Hair-styling.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 266
+        },
+        {
+          "title": "• Consumers often want to see, touch and try them ...",
+          "level": 2,
+          "content": "• Consumers often want to see, touch and try them before they buy.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 268
+        },
+        {
+          "title": "• Or they may want products immediately and won't ...",
+          "level": 2,
+          "content": "• Or they may want products immediately and won't wait for them to be shipped.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 270
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Everything that a retailer can do to make the shopping experience pleasurable and fun ensures that customers come back.",
+          "content_type": "bullet_block",
+          "line_start": 239,
+          "line_end": 272
+        },
+        {
+          "title": "E-Commerce for Service Sector",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 274,
+          "line_end": 274
+        },
+        {
+          "title": "• Service Sector one of 3 main industrial categori...",
+          "level": 2,
+          "content": "• Service Sector one of 3 main industrial categories of developed economy.",
+          "content_type": "bullet_block",
+          "line_start": 275,
+          "line_end": 276
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Tertiary sector of industry involves provision of services like transportation, distribution & sale of goods to other businesses & for consumers e.g.-Pest Control,entertainment.",
+          "content_type": "bullet_block",
+          "line_start": 275,
+          "line_end": 278
+        },
+        {
+          "title": "• Focus of service on people to people.",
+          "level": 2,
+          "content": "• Focus of service on people to people.",
+          "content_type": "bullet_block",
+          "line_start": 275,
+          "line_end": 280
+        },
+        {
+          "title": "• It includes \"soft\" parts of economy like Insuran...",
+          "level": 2,
+          "content": "• It includes \"soft\" parts of economy like Insurance, tourism, banking, education etc.",
+          "content_type": "bullet_block",
+          "line_start": 275,
+          "line_end": 282
+        },
+        {
+          "title": "Issues for Service Providers :-",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 284,
+          "line_end": 284
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "1. Services are intangible, hence difficult to make consumers understand about the what they will receive and what value it will hold them.",
+          "content_type": "list",
+          "line_start": 285,
+          "line_end": 286
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "2. No special technology as like in manufacturing to attract people. 3. No simplification or techniques to lower the cost of goods.",
+          "content_type": "list",
+          "line_start": 285,
+          "line_end": 288
+        },
+        {
+          "title": "4. Quality of service depends on quality of indivi...",
+          "level": 2,
+          "content": "4. Quality of service depends on quality of individual providing services",
+          "content_type": "list",
+          "line_start": 285,
+          "line_end": 290
+        },
+        {
+          "title": "Role of e-commerce in Service Providers :-",
+          "level": 2,
+          "content": "Role of e-commerce in Service Providers :-",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 292
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "1. Gaining competitive advantage by providing strategies for differentiation and cost leadership and customer satisfaction.",
+          "content_type": "list",
+          "line_start": 285,
+          "line_end": 294
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "2. E-Commerce will improve speed of transactions, reduce mgmt. expenditure, increase competitiveness.",
+          "content_type": "list",
+          "line_start": 285,
+          "line_end": 296
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "3. Helps banking, insurance & financial sectors, real estate, construction, telecom, tourism, postal & logistics services.",
+          "content_type": "list",
+          "line_start": 285,
+          "line_end": 298
+        },
+        {
+          "title": "Models of e-commerce",
+          "level": 2,
+          "content": "Models of e-commerce",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 300
+        },
+        {
+          "title": "There are four main general e-commerce models",
+          "level": 2,
+          "content": "There are four main general e-commerce models: ▪ Business to Business (or B2B) e-commerce (sometimes called e-procurement)",
+          "content_type": "definition",
+          "line_start": 285,
+          "line_end": 302
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Business to Consumer (or B2C) e-commerce ▪ Business-to-government (or B2G) e-commerce ▪ Consumer-to-consumer (or C2C) e-commerce",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 304
+        },
+        {
+          "title": "\"Business-to-business\" (B2B) commerce",
+          "level": 2,
+          "content": "\"Business-to-business\" (B2B) commerce",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 306
+        },
+        {
+          "title": "refers to businesses purchasing goods",
+          "level": 2,
+          "content": "refers to businesses purchasing goods",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 308
+        },
+        {
+          "title": "from other businesses, generally over the",
+          "level": 2,
+          "content": "from other businesses, generally over the",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 310
+        },
+        {
+          "title": "Internet.",
+          "level": 2,
+          "content": "Internet.",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 312
+        },
+        {
+          "title": "• It involves a business at both ends",
+          "level": 2,
+          "content": "• It involves a business at both ends",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 314
+        },
+        {
+          "title": "of transaction.",
+          "level": 2,
+          "content": "of transaction.",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 316
+        },
+        {
+          "title": "• Unlike the B2C, the buyer and s e l l",
+          "level": 2,
+          "content": "• Unlike the B2C, the buyer and s e l l",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 318
+        },
+        {
+          "title": "e r b o t h a r e b u si n e ss organizations.",
+          "level": 2,
+          "content": "e r b o t h a r e b u si n e ss organizations.",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 320
+        },
+        {
+          "title": "• Buyers and sellers are connected",
+          "level": 2,
+          "content": "• Buyers and sellers are connected",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 322
+        },
+        {
+          "title": "to each other via a virtual market place.",
+          "level": 2,
+          "content": "to each other via a virtual market place.",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 324
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "-Companies doing business with each other such as manufacturers selling to distributors and wholesalers selling to retailers.",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 326
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "-The market for Business to Business E-Commerce is potentially much bigger than business to consumer e-commerce.",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 328
+        },
+        {
+          "title": "-Allows companies to transfer information easier.",
+          "level": 2,
+          "content": "-Allows companies to transfer information easier.",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 330
+        },
+        {
+          "title": "-The volume of B2B transactions is much higher tha...",
+          "level": 2,
+          "content": "-The volume of B2B transactions is much higher than the volume of B2C transactions.",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 332
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "-Financial transactions can be processed quicker and more efficiently. -The payment method is generally bank to bank money transfer.",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 334
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "-For example, an automobile manufacturer makes several B2B transactions such as buying tires, glass for windscreens, and rubber hoses for its vehicles. The final transaction, a finished vehicle sold to the consumer, is a single (B2C) transaction.",
+          "content_type": "paragraph",
+          "line_start": 285,
+          "line_end": 336
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It involves customers purchasing goods over the Internet. - Involves a business as seller at one side and a consumer (end-user) as buyer at the other side.",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 338
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Businesses selling to the general public typically through catalogs utilizing shopping cart software.",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 340
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Customers can browse catalogs when they want, place an order and the product of service will be delivered directly to them.",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 342
+        },
+        {
+          "title": "• No need for a physical store from which to distr...",
+          "level": 2,
+          "content": "• No need for a physical store from which to distribute products.",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 344
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Eg. of a B2C application is a retail web site featuring the business's products or services that can be directly purchased by the consumer.",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 346
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• The seller may be selling products (e.g. gifts, foodstuff, books etc.) or services (information service on jobs, education, entertainment services like music/video play etc).",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 348
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• In addition to online retailers, B2C has grown to include services such as online banking, travel services, online auctions, health information and real estate sites.",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 350
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Payments are usually made through credit card and goods delivered through courier or on-line (software).",
+          "content_type": "bullet_block",
+          "line_start": 285,
+          "line_end": 352
+        },
+        {
+          "title": "Definition",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 354,
+          "line_end": 354
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• \"Consumer-to-consumer \" e-commerce or C2C involves the electronically-facilitated transactions between consumers through some third party.",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 356
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Eg. the online auction, in which a consumer posts an item for sale and other consumers bid to purchase it; the third party generally charges a flat fee or commission.",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 358
+        },
+        {
+          "title": "• The sites are only intermediaries, just there to...",
+          "level": 2,
+          "content": "• The sites are only intermediaries, just there to match consumers.",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 360
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• They do not have to check quality of the products being offered. - This type of e-commerce is expected to increase in the future because it cuts out the costs of using another company. - Egs. Of C2C",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 362
+        },
+        {
+          "title": "• eBay",
+          "level": 2,
+          "content": "• eBay",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 364
+        },
+        {
+          "title": "• Craigslist",
+          "level": 2,
+          "content": "• Craigslist",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 366
+        },
+        {
+          "title": "• Amazon.com",
+          "level": 2,
+          "content": "• Amazon.com",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 368
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "\"Business-to-government\" e-commerce or B2G is generally defined as commerce between companies and the public sector.",
+          "content_type": "paragraph",
+          "line_start": 355,
+          "line_end": 370
+        },
+        {
+          "title": "• Businesses sells goods or services to government...",
+          "level": 2,
+          "content": "• Businesses sells goods or services to governments and government agencies.",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 372
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Businesses and government agencies can use central Web sites to exchange information and do business with each other more efficiently. - Business-to-government (B2G) model is also referred to as Business-to administration",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 374
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It refers to the use of the Internet for public procurement, licensing procedures, and other government-related operations.",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 376
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Web-based purchasing policies increase the transparency of the procurement process (and reduces the risk of irregularities).",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 378
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• The size of the B2G e-commerce market as a component of total e commerce is insignificant, as government e-procurement systems remain undeveloped.",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 380
+        },
+        {
+          "title": "• Eg. Cal-Buy portal for businesses that want to s...",
+          "level": 2,
+          "content": "• Eg. Cal-Buy portal for businesses that want to sell online to the State of California",
+          "content_type": "bullet_block",
+          "line_start": 355,
+          "line_end": 382
+        },
+        {
+          "title": "Examples of E-commerce Models",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 384,
+          "line_end": 384
+        },
+        {
+          "title": "You are a computer manufacturing company who perfo...",
+          "level": 2,
+          "content": "You are a computer manufacturing company who performs the following activities on the Internet:",
+          "content_type": "paragraph",
+          "line_start": 385,
+          "line_end": 386
+        },
+        {
+          "title": "• Purchases parts (e.g. hard drives, power supplie...",
+          "level": 2,
+          "content": "• Purchases parts (e.g. hard drives, power supplies etc.) from a supplier (B2B)",
+          "content_type": "bullet_block",
+          "line_start": 385,
+          "line_end": 388
+        },
+        {
+          "title": "• Sells computers to individuals (B2C)",
+          "level": 2,
+          "content": "• Sells computers to individuals (B2C)",
+          "content_type": "bullet_block",
+          "line_start": 385,
+          "line_end": 390
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Sells computers to the Government to be used in schools (B2G) - On eBay.in individuals buy and sell this brand of computers (C2C)",
+          "content_type": "bullet_block",
+          "line_start": 385,
+          "line_end": 392
+        },
+        {
+          "title": "Advantages of E-commerce",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 394,
+          "line_end": 394
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• E-commerce is beneficial for organizations, society, and customers. So we can categorize its benefits into three categories: benefits to consumers, benefits to society, and benefits to organizations.",
+          "content_type": "bullet_block",
+          "line_start": 395,
+          "line_end": 396
+        },
+        {
+          "title": "Advantages to Consumers",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 398,
+          "line_end": 398
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• E-commerce provides 24x7 supports to its consumers. It provides the facility of placing orders anytime, anywhere, or from any location.",
+          "content_type": "bullet_block",
+          "line_start": 399,
+          "line_end": 400
+        },
+        {
+          "title": "• It provides more options to its customers and gi...",
+          "level": 2,
+          "content": "• It provides more options to its customers and gives a faster delivery of products.",
+          "content_type": "bullet_block",
+          "line_start": 399,
+          "line_end": 402
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Cheap Variety of options Because of e-commerce, the competition between the organization increases, and as a result organization gives ample discounts to its customers. Users can select cheaper and better options via e-commerce as it provides more options to its customers.",
+          "content_type": "bullet_block",
+          "line_start": 399,
+          "line_end": 404
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Before the final purchase of a product, a customer can see the reviews and comments of a particular product and can also put their reviews and comments about a product.",
+          "content_type": "bullet_block",
+          "line_start": 399,
+          "line_end": 406
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It provides the information in an easy way, i.e., the information is not hard to read. A customer can see the detailed information of a product within some seconds instead of waiting for days.",
+          "content_type": "bullet_block",
+          "line_start": 399,
+          "line_end": 408
+        },
+        {
+          "title": "Advantages to Society",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 410,
+          "line_end": 410
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It is majorly beneficial for reducing air pollution because e commerce customers do not require to travel, and as a result, there will be less traffic on the road.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 412
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It provides the facility to rural areas to access services and products that are otherwise unavailable to them.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 414
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• E-commerce is helpful to government in delivering the public services like education and healthcare in a better way and at a minimal cost.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 416
+        },
+        {
+          "title": "Advantages of organizations",
+          "level": 2,
+          "content": "Advantages of organizations",
+          "content_type": "paragraph",
+          "line_start": 411,
+          "line_end": 418
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• With minimum investment, organizations can expand their business or market to national and international levels.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 420
+        },
+        {
+          "title": "• E-commerce helps to improve the company's brand ...",
+          "level": 2,
+          "content": "• E-commerce helps to improve the company's brand image.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 422
+        },
+        {
+          "title": "• It is also helpful to organizations to provide b...",
+          "level": 2,
+          "content": "• It is also helpful to organizations to provide better services to their customers.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 424
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• E-commerce digitizes the information that helps to manage the paper-based information, reduce the cost of creating processes.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 426
+        },
+        {
+          "title": "• It helps to increase the productivity of organiz...",
+          "level": 2,
+          "content": "• It helps to increase the productivity of organizations.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 428
+        },
+        {
+          "title": "Disadvantages of e-commerce",
+          "level": 2,
+          "content": "Disadvantages of e-commerce",
+          "content_type": "paragraph",
+          "line_start": 411,
+          "line_end": 430
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• As there is a requirement of the internet to use e-commerce, it is possible that the internet may be slow.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 432
+        },
+        {
+          "title": "• It does not have any universal standard for reli...",
+          "level": 2,
+          "content": "• It does not have any universal standard for reliability and quality.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 434
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• Security is another concern of using e-commerce. We have seen security breaches many times where the customer's information got stolen. Some of the big concerns with customers include identity theft, credit card theft, etc.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 436
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It is a major drawback in E-commerce that there is a lack of feel or touch of products while purchasing them online.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 438
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It is inconvenient to use the internet for those people who are living in remote villages, and it is still not cheaper.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 440
+        },
+        {
+          "title": "• The cost of the creation and building of an e-co...",
+          "level": 2,
+          "content": "• The cost of the creation and building of an e-commerce application may be very high.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 442
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• It is hard to convince traditional users to purchase products online rather than in physical stores.",
+          "content_type": "bullet_block",
+          "line_start": 411,
+          "line_end": 444
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "Mobile Commerce (M- Commerce) - is the ability to conduct commerce, using a mobile device e.g. a mobile phone (cell phone), a PDA (personal digital assistants ), a smartphone and other emerging mobile equipment.",
+          "content_type": "paragraph",
+          "line_start": 411,
+          "line_end": 446
+        },
+        {
+          "title": "Definition",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 448,
+          "line_end": 448
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "\"Mobile Commerce is any transaction, involving the transfer of ownership or rights to use goods and services, which is initiated and/or completed by using mobile access to computer-mediated networks with the help of an electronic device.\"",
+          "content_type": "paragraph",
+          "line_start": 449,
+          "line_end": 450
+        },
+        {
+          "title": "Mobile Commerce (M- Commerce)",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 452,
+          "line_end": 452
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• M-commerce, involves using wireless handheld devices like cell phones and tablets to conduct commercial transactions online, including the purchase and sale of products, online.",
+          "content_type": "bullet_block",
+          "line_start": 453,
+          "line_end": 454
+        },
+        {
+          "title": "•",
+          "level": 2,
+          "content": "•",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 456
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "Mobile commerce is an increasingly large subset of electronic commerce, a model where firms or individuals conduct business over the internet.",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 458
+        },
+        {
+          "title": "Many products and services can be transacted m",
+          "level": 2,
+          "content": "Many products and services can be transacted m",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 460
+        },
+        {
+          "title": "commerce, including banking, investing, and purcha...",
+          "level": 2,
+          "content": "commerce, including banking, investing, and purchases of books, plane tickets, and digital music.",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 462
+        },
+        {
+          "title": "•",
+          "level": 2,
+          "content": "•",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 464
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• M-Commerce for finance: The customer (using the mobile) can pay from their bank account using mobile commerce facilities. Mobile users can transfer funds between account or receive any information related to finance from financial institutions or banks. The M-Commerce is very much prevalent in stock broking services. The user can accessthe stock market quotes. The share brokerssend/ receive details about the market trends to/from client in the form of SMS or call.",
+          "content_type": "bullet_block",
+          "line_start": 453,
+          "line_end": 466
+        },
+        {
+          "title": "M-Commerce for Retail and After sale Services",
+          "level": 2,
+          "content": "M-Commerce for Retail and After sale Services: Companies can also make",
+          "content_type": "definition",
+          "line_start": 453,
+          "line_end": 468
+        },
+        {
+          "title": "•",
+          "level": 2,
+          "content": "•",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 470
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "online catalog of products so that the mobile users can access the catalog from their mobile devices. Customers are able to shop, place orders or hire services and pay for dues through mobile phones.",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 472
+        },
+        {
+          "title": "M-Commerce and Mobile Marketing ",
+          "level": 2,
+          "content": "M-Commerce and Mobile Marketing : It is easy for business organizations to",
+          "content_type": "definition",
+          "line_start": 453,
+          "line_end": 474
+        },
+        {
+          "title": "•",
+          "level": 2,
+          "content": "•",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 476
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "send text messages to promote a new product or carryout any form of promotional campaign. For example, XYZ Co. sends the customer an SMS stating the reward points earned by them when they purchase goodsfrom them. Even if some changes are brought in providing reward points, they are informed to the customer in order to encourage sales.",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 478
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "• M-Commerce and Mobile Ticketing : Airline tickets can be purchased through mobile phone. It also enables users of mobile phone to make changes in their tickets. Movie tickets can also be booked through mobile phones.",
+          "content_type": "bullet_block",
+          "line_start": 453,
+          "line_end": 480
+        },
+        {
+          "title": "M-Commerce in Healthcare and Medicine ",
+          "level": 2,
+          "content": "M-Commerce in Healthcare and Medicine : Wireless services are used in",
+          "content_type": "definition",
+          "line_start": 453,
+          "line_end": 482
+        },
+        {
+          "title": "•",
+          "level": 2,
+          "content": "•",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 484
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "healthcare and medicine for billing, lab ordering, referrals, prescriptions and clinical decisions. For example, in United States, healthcare professionals are able to obtain patient information from any location by getting connected wirelessly to the hospital's information system. They are able to access the pharmaceutical information of patients and provide better patient care.",
+          "content_type": "paragraph",
+          "line_start": 453,
+          "line_end": 486
+        },
+        {
+          "title": "M-Commerce for Information",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 488,
+          "line_end": 488
+        },
+        {
+          "title": "•",
+          "level": 2,
+          "content": "•",
+          "content_type": "paragraph",
+          "line_start": 489,
+          "line_end": 490
+        },
+        {
+          "title": "",
+          "level": 2,
+          "content": "Mobiles enable customers to get information like sport news or political news of their choice. For example, today through SMS, students are able to check their university results or public examination results.",
+          "content_type": "paragraph",
+          "line_start": 489,
+          "line_end": 492
+        },
+        {
+          "title": "THANK YOU",
+          "level": 2,
+          "content": "",
+          "content_type": "heading",
+          "line_start": 494,
+          "line_end": 494
+        }
+      ],
+      "line_start": 48,
+      "line_end": 494
+    }
+  ],
+  "metadata": {
+    "total_chapters": 3,
+    "file_type": "docx",
+    "confidence_score": 0.98,
+    "warnings": [
+      "Cleaned: Removed 19 header/footer lines, Normalized 45 bullet points, Fixed 201 spacing issues (+2 more)"
+    ]
+  }
+}
