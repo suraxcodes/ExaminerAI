@@ -1,3 +1,6 @@
 pip install pypdf pdf2image pytesseract python-docx Pillow
 
 
+pip install tq
+pip install openai
+pip install sentence-transformers

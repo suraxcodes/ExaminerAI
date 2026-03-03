@@ -14,6 +14,8 @@ class Topic:
     line_start: int
     line_end: int
     subsections: List['Topic'] = field(default_factory=list)
+    importance_score: float = 0.0
+    detected_type: str = "default"
 
 
 @dataclass
@@ -24,6 +26,10 @@ class Chapter:
     sections: List[Topic] = field(default_factory=list)  
     line_start: int = 0
     line_end: int = 0
+    content: str = ""             
+    importance_score: float = 0.0            
+    content_type: str = "chapter"
+
 
 
 @dataclass

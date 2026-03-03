@@ -15,303 +15,130 @@ from documentsCLearing import DocumentCleaner
 if sys.platform == "win32":
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-#data container for document 
 @dataclass
 class ExtractionResult:
-    """it going to contain the extracted text """
-    raw_text:str
-    file_type:str
-    page_count:int 
-    page_mapping:list 
-    confidence_score:float 
-    warnings:list 
-    formatting_notes:dict 
+    raw_text: str
+    file_type: str
+    page_count: int 
+    page_mapping: list 
+    confidence_score: float 
+    warnings: list 
+    formatting_notes: dict 
+    line_metadata: dict = None  # NEW: {line_index: {"bold_count": X, ...}}
 
-
+# Inside DocumentLoader class:
 class DocumentDetector:
-    """This class will detect file type."""
-
+    @staticmethod
     def detect_file_type(file_path):
-        ext = Path(file_path).suffix.lower()
+        suffix = Path(file_path).suffix.lower()
+        if suffix == ".docx":
+            return "docx"
+        elif suffix == ".pdf":
+            return "pdf"
+        elif suffix in [".jpg", ".jpeg", ".png", ".bmp", ".gif", ".tiff"]:
+            return "image"
+        return "unknown"
 
-        type_map = {
-                '.pdf': "pdf",
-                '.docx': "docx",
-                '.doc': "doc",
-                '.jpg': "image",
-                '.jpeg': "image",
-                '.png': "image",
-                '.bmp': "image",
-                '.tiff': "image",
-                '.gif': "image",
-                }
-        return type_map.get(ext, "unknown")
-    
-    def validated_file(file_path):
-        """ check for file existence and valid type"""
-
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"File not found: {file_path}")
-        if not os.access(file_path, os.R_OK):
-            raise PermissionError(f"File is not readable: {file_path}")
-        
-        file_path = DocumentDetector.detect_file_type(file_path)
-        if file_path =="unknown":
-            return False,f"Unsupported file type: {file_path}"
-        
-        return True ," file is good to Gooooooooo"
-    
-class PDFExtractor:
-    """"pdf extract logic will go here"""
+class DocumentsExtractor:
+    @staticmethod
     def extract(file_path):
-        """ will return text ,page count , page mapping , confidence score , warnings, formatting notes"""
-
-        warmings = []
+        detector = DocumentDetector()
+        file_type = detector.detect_file_type(file_path)
         
+        if file_type == "docx":
+            return DocxExtractor.extract(file_path)
+        elif file_type == "pdf":
+            # Assuming PDFExtractor logic exists or placeholder
+            all_text, page_info, confidence, warnings, formatting, page_count = PDFExtractor.extract(file_path)
+            return ExtractionResult(
+                raw_text=all_text, file_type="pdf", page_count=page_count,
+                page_mapping=page_info, confidence_score=confidence,
+                warnings=warnings, formatting_notes=formatting, line_metadata={}
+            )
+        elif file_type == "image":
+            all_text, page_info, confidence, warnings, formatting, page_count = ImageExtractor.extractImaege(file_path)
+            return ExtractionResult(
+                raw_text=all_text, file_type="image", page_count=page_count,
+                page_mapping=page_info, confidence_score=confidence,
+                warnings=warnings, formatting_notes=formatting, line_metadata={}
+            )
+        else:
+            raise ValueError(f"Unsupported file type: {file_type}")
 
-        try :
+class PDFExtractor:
+    @staticmethod
+    def extract(file_path):
+        warnings = []
+        try:
             pdf_reader = PdfReader(file_path)
-
             all_text = ""
             page_info = []
             total_confidence = 0.0
-
             num_pages = len(pdf_reader.pages)
 
-            for page_number,page in enumerate(pdf_reader.pages,1):
-                
+            for page_number, page in enumerate(pdf_reader.pages, 1):
                 char_start = len(all_text)
-                page_text = page.extract_text()
-
-                if page_text is None :
-                    page_text=""
-
-                all_text +=page_text + "\n\n" 
-
+                page_text = page.extract_text() or ""
+                all_text += page_text + "\n\n"
                 char_end = len(all_text)
-
-                if len(page_text.strip()) > 0:
-                    confidence = 0.95
-                else:
-                    confidence = 0.5
-
+                confidence = 0.95 if page_text.strip() else 0.5
                 total_confidence += confidence
-
-                page_info.append(
-                    {
-                        "page_number": page_number,
-                        "text": page_text,
-                        "confidence": confidence,
-                        "char_start": char_start,
-                        "char_end": char_end
-                    }
-                )
+                page_info.append({
+                    "page_number": page_number, "text": page_text,
+                    "confidence": confidence, "char_start": char_start, "char_end": char_end
+                })
 
             avg_confidence = total_confidence / num_pages if num_pages > 0 else 0.0
-
-            return all_text, page_info, avg_confidence, warmings, {}, num_pages
-        
+            return all_text, page_info, avg_confidence, warnings, {}, num_pages
         except Exception as e:
-            return f"[PDF error: {e}]"
+            return f"[PDF error: {e}]", [], 0.0, [str(e)], {}, 0
 
-class DocumentLoader:
-    """extract text from doucment """
-
-    def extract(file_path):
-        """ main method to extract text from document"""
-            
-
-        
-        try:
-            doc = Document(file_path)
-
-            all_text = ""
-            page_info = []
-            warnings = []  
-
-            formatting = {
-                "bold_count": 0,
-                "italic_count": 0,
-                "heading": 0,
-                "list_count": 0,
-            } 
-
-            #go in each paragraph in document
-            for para_index,paragraph in enumerate(doc.paragraphs):
-
-                char_start = len(all_text)
-
-                para_text = paragraph.text
-
-                style_name = paragraph.style.name
-                is_heading = "Heading" in style_name
-
-                if is_heading:
-                    formatting["heading"]+=1
-                    try:
-                        level = int(style_name[-1])
-                    except:
-                        level = 1
-                    # Add heading marker to text
-                    para_text = f"[HEADING {level}] {para_text}"
-                
-                if style_name.startswith("List"):
-                    formatting["list"]+=1
-                    para_text = f"[LIST] {para_text}"
- # Check for bold and italic text
-                for run in paragraph.runs:
-                    if run.bold:
-                        formatting["bold_count"]+=1
-                    if run.italic:
-                        formatting["italic_count"]+=1
-
-                all_text += para_text + "\n\n"
-
-                char_end = len(all_text)
-
-                page_info.append(
-                    {
-                        "elements": para_index,
-                        "is_heading": is_heading,
-                        "char_start": char_start,
-                        "char_end": char_end,
-                        "style": style_name
-                    }
-                )
-
-            confidence = 0.98
-
-            page_count = max(1, len(all_text) // 3000)  
-            return all_text, page_info, confidence, warnings, formatting, page_count
-
-        except Exception as e :
-            return f"[DocumentLoader error: {e}]"    
-
-## extract text from image using OCR
 class ImageExtractor:
-    """extract text from image using OCR"""
-
+    @staticmethod
     def extractImaege(file_path):
-        """ take image and extract text from it usess orc """
-
-        warnings = []  
-        
+        warnings = []
         try:
             image = Image.open(file_path)
             image_extract_text = pytesseract.image_to_string(image)
-
-# Try to get confidence score
             try:
                 ocr_data = pytesseract.image_to_data(image, output_type=pytesseract.Output.DICT)
-
                 valid_confidences = [int(c) for c in ocr_data['conf'] if int(c) > 0]
-                avg_confidence = sum(valid_confidences) / len(valid_confidences) if valid_confidences else 0.0
-
-               
-                confidence = avg_confidence / 100.0
-
+                avg_confidence = (sum(valid_confidences) / len(valid_confidences)) / 100.0 if valid_confidences else 0.7
             except:
-                confidence = 0.7
-
-#store page info 
-            page_info =[{
-                "page_number": 1,
-                "char_start": 0,
-                "char_end": len(image_extract_text),
-                "__path__ocr_confidence": confidence
-            }]    
-
-            if confidence < 0.7:
+                avg_confidence = 0.7
+            page_info = [{"page_number": 1, "char_start": 0, "char_end": len(image_extract_text), "ocr_confidence": avg_confidence}]
+            if avg_confidence < 0.7:
                 warnings.append("Low OCR confidence, text may be inaccurate.")
-            
- 
-            return (image_extract_text, page_info, confidence, warnings, {}, 1)
-
+            return image_extract_text, page_info, avg_confidence, warnings, {}, 1
         except Exception as e:
-            return f"[ImageExtractor error: {e}]"   
-        
-class DocumentsExtractor:
-    """this class will be the main entry point for document
-    1. Checks if file is valid
-    2. Figures out what type it is
-    3. Sends it to the right extractor
-    4. Returns the results"""
+            return f"[ImageExtractor error: {e}]", [], 0.0, [str(e)], {}, 0
 
+class DocxExtractor:
+    @staticmethod
     def extract(file_path):
-        # Step 1 check if file is okayyyyy
-        is_valid , validation_message = DocumentDetector.validated_file(file_path)
-
-        if not is_valid:
-            print(validation_message)
-
-            return ExtractionResult(
-                raw_text="",
-                file_type="unknown",
-                page_count=0,
-                page_mapping=[],
-                confidence_score=0.0,
-                warnings=[validation_message],
-                formatting_notes={}
-            )
+        doc = Document(file_path)
+        all_text = ""
+        line_metadata = {}
         
-        # Step 2 figure out file type
-        file_type = DocumentDetector.detect_file_type(file_path)
-
-        if file_type =="pdf":
-            text, mapping, confidence, warnings, formatting, page_count = PDFExtractor.extract(file_path)
-        elif file_type == "docx" or file_type == "doc":
-            text, mapping, confidence, warnings, formatting, page_count = DocumentLoader.extract(file_path)
-        elif file_type == "image":
-            text, mapping, confidence, warnings, formatting, page_count = ImageExtractor.extractImaege(file_path)   
-        else:
-            #unknow filew type
-            return ExtractionResult(
-                raw_text="",    
-                file_type=file_type,
-                page_count=0,
-                page_mapping=[],
-                confidence_score=0.0,
-                warnings=[f"Unsupported file type: {file_type}"],
-                formatting_notes={}
-            )
-        
-        # Clean the extracted text
-        print("Cleaning extracted text...")
-        cleaner = DocumentCleaner()
-        cleaning_result = cleaner.clean(
-            text,
-            remove_page_numbers=True,
-            remove_headers_footers=True,
-            remove_repeated_titles=True,
-            remove_watermarks=True,
-            normalize_bullets=True,
-            normalize_spacing=True,
-            fix_encoding=True
-        )
-        
-        text = cleaning_result.cleaned_text
-        
-
-        if cleaning_result.issues_fixed:
-            cleaning_summary = f"Cleaned: {', '.join(cleaning_result.issues_fixed[:3])}"
-            if len(cleaning_result.issues_fixed) > 3:
-                cleaning_summary += f" (+{len(cleaning_result.issues_fixed) - 3} more)"
-            warnings.append(cleaning_summary)
-        
-        if confidence < 0.5 and len(text.strip()) > 0:
-            warnings.append(f"Low confidence ({confidence:.1%}). Check text carefully.")
-        if len(text.strip()) == 0:
-            warnings.append("No text extracted. Check if the document is empty or if there was an extraction issue.")
+        for i, paragraph in enumerate(doc.paragraphs):
+            para_text = paragraph.text
+            bold_words = [run.text for run in paragraph.runs if run.bold]
+            
+            # This is the "DNA" of each line
+            line_metadata[i] = {
+                "bold_count": len(bold_words),
+                "is_list": "•" in para_text or paragraph.style.name.startswith("List"),
+                "text": para_text
+            }
+            all_text += para_text + "\n"
 
         return ExtractionResult(
-                    raw_text=text,
-                    file_type=file_type,
-                    page_count=page_count,
-                    page_mapping=mapping,
-                    confidence_score=confidence,
-                    warnings=warnings,
-                    formatting_notes=formatting
-                )
+            raw_text=all_text,
+            file_type="docx",
+            page_count=1,
+            line_metadata=line_metadata,
+            page_mapping=[], confidence_score=1.0, warnings=[], formatting_notes={}
+        )
     #format and save 
 class ResultFormatter:
         """format the rusults and save to files """
