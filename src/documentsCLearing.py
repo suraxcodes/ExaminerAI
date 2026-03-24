@@ -1,6 +1,9 @@
 import re 
+import logging
 from dataclasses import dataclass
 from typing import List, Dict
+
+log = logging.getLogger(__name__)
 
 @dataclass
 class CleaningResult:
@@ -99,9 +102,10 @@ class HeaderFooterRemover:
                 line_counts[stripped] = line_counts.get(stripped, 0) + 1
         
         # Find repeated lines (potential headers/footers)
+        # Improvement: threshold check is now higher and ignores short common fragments
         repeated_lines = {
             line: count for line, count in line_counts.items()
-            if count >= 2
+            if count >= 3 and len(line) > 20
         }
         
         return {
@@ -482,11 +486,11 @@ class DocumentCleaner:
         removed_items = {}
         issues_fixed = []
         
-        print("Starting document cleaning...\n")
+        log.info("Starting document cleaning...")
         
         # Step 1: Remove page numbers
         if remove_page_numbers:
-            print(" Removing page numbers...")
+            log.info(" Removing page numbers...")
             cleaned_text, count = self.page_number_remover.remove_page_numbers(
                 cleaned_text
             )
@@ -567,7 +571,7 @@ class DocumentCleaner:
                 issues_fixed.append(f"Fixed {count} typos")
                 print(f"Fixed {count} typos")
         
-        print("\n Document cleaning complete!\n")
+        log.info(" Document cleaning complete!")
         
         # Calculate statistics
         statistics = {
@@ -676,5 +680,6 @@ class CleaningOutputFormatter:
 
 
 if __name__ == "__main__":
-    print("DOCUMENT CLEANER\n")
-    example_usage()
+    import logging
+    logging.basicConfig(level=logging.INFO)
+    print("DOCUMENT CLEANER READY (Import into your script to use)")

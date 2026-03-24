@@ -48,12 +48,8 @@ class HeadingDetector:
     # Pattern for [HEADING N] markers
     HEADING_MARKER = re.compile(r'^\[HEADING\s+(\d+)\]\s*(.+)$')
     
-    # Pattern for common heading keywords
-    HEADING_KEYWORDS = [
-        r'^(?:chapter|unit|section|part)\s+\d+',
-        r'^(?:introduction|conclusion|summary|overview)',
-        r'^(?:appendix|references|bibliography)',
-    ]
+    # Pattern for Markdown headings (# Title, ## Title)
+    MD_HEADING = re.compile(r'^(#+)\s+(.+)$')
     
     @staticmethod
     def detect_heading(line: str, prev_line: str = '', next_line: str = '', 
@@ -93,7 +89,19 @@ class HeadingDetector:
                     'original': line_stripped
                 }
         
-        # Priority 2: Check for [HEADING N] markers
+        # Priority 2: Check for Markdown headings (# Title, ## Title)
+        md_match = HeadingDetector.MD_HEADING.match(line_stripped)
+        if md_match:
+            level = len(md_match.group(1))
+            title = md_match.group(2).strip()
+            return {
+                'type': 'markdown',
+                'level': level,
+                'title': title,
+                'original': line_stripped
+            }
+
+        # Priority 3: Check for [HEADING N] markers
         marker_match = HeadingDetector.HEADING_MARKER.match(line_stripped)
         if marker_match:
             level = int(marker_match.group(1))
@@ -105,7 +113,7 @@ class HeadingDetector:
                 'original': line_stripped
             }
         
-        # Priority 3: Check for numbered headings (1., 1.1, etc.)
+        # Priority 4: Check for numbered headings (1., 1.1, etc.)
         numbered_match = HeadingDetector.NUMBERED_HEADING.match(line_stripped)
         if numbered_match:
             number = numbered_match.group(1)
@@ -120,17 +128,6 @@ class HeadingDetector:
                 'number': number
             }
         
-        # Priority 4: Check for keyword headings (stricter now)
-        for pattern in HeadingDetector.HEADING_KEYWORDS:
-            if re.match(pattern, line_stripped, re.IGNORECASE):
-                return {
-                    'type': 'keyword',
-                    'level': 1,
-                    'title': line_stripped,
-                    'original': line_stripped
-                }
-        
-        # Remove inferred heading logic - too unreliable
         return None
 
 

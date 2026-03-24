@@ -4,12 +4,10 @@ from pathlib import Path
 from dataclasses import dataclass
 import sys
 from PIL import Image
-from unittest import result
 from docx import Document
 from pypdf import PdfReader
 import pytesseract
 
-from documentsCLearing import DocumentCleaner
 
 
 if sys.platform == "win32":
@@ -37,6 +35,8 @@ class DocumentDetector:
             return "pdf"
         elif suffix in [".jpg", ".jpeg", ".png", ".bmp", ".gif", ".tiff"]:
             return "image"
+        elif suffix == ".txt":
+            return "txt"
         return "unknown"
 
 class DocumentsExtractor:
@@ -56,12 +56,14 @@ class DocumentsExtractor:
                 warnings=warnings, formatting_notes=formatting, line_metadata={}
             )
         elif file_type == "image":
-            all_text, page_info, confidence, warnings, formatting, page_count = ImageExtractor.extractImaege(file_path)
+            all_text, page_info, confidence, warnings, formatting, page_count = ImageExtractor.extract_image(file_path)
             return ExtractionResult(
                 raw_text=all_text, file_type="image", page_count=page_count,
                 page_mapping=page_info, confidence_score=confidence,
                 warnings=warnings, formatting_notes=formatting, line_metadata={}
             )
+        elif file_type == "txt":
+            return TxtExtractor.extract(file_path)
         else:
             raise ValueError(f"Unsupported file type: {file_type}")
 
@@ -95,7 +97,7 @@ class PDFExtractor:
 
 class ImageExtractor:
     @staticmethod
-    def extractImaege(file_path):
+    def extract_image(file_path):
         warnings = []
         try:
             image = Image.open(file_path)
@@ -111,6 +113,8 @@ class ImageExtractor:
                 warnings.append("Low OCR confidence, text may be inaccurate.")
             return image_extract_text, page_info, avg_confidence, warnings, {}, 1
         except Exception as e:
+            import logging
+            logging.getLogger(__name__).error(f"Image extraction failed: {e}")
             return f"[ImageExtractor error: {e}]", [], 0.0, [str(e)], {}, 0
 
 class DocxExtractor:
@@ -119,6 +123,7 @@ class DocxExtractor:
         doc = Document(file_path)
         all_text = ""
         line_metadata = {}
+        formatting_notes = {}
         
         for i, paragraph in enumerate(doc.paragraphs):
             para_text = paragraph.text
@@ -130,6 +135,22 @@ class DocxExtractor:
                 "is_list": "•" in para_text or paragraph.style.name.startswith("List"),
                 "text": para_text
             }
+            
+            # Correctly identify headings from DOCX styles
+            style_name = paragraph.style.name.lower()
+            is_hdr = style_name.startswith('heading')
+            hdr_lvl = 1
+            if is_hdr:
+                try:
+                    hdr_lvl = int(style_name.replace('heading', '').strip())
+                except:
+                    hdr_lvl = 2
+                    
+            formatting_notes[i] = {
+                "is_heading": is_hdr,
+                "heading_level": hdr_lvl
+            }
+
             all_text += para_text + "\n"
 
         return ExtractionResult(
@@ -137,7 +158,19 @@ class DocxExtractor:
             file_type="docx",
             page_count=1,
             line_metadata=line_metadata,
-            page_mapping=[], confidence_score=1.0, warnings=[], formatting_notes={}
+            formatting_notes=formatting_notes,
+            page_mapping=[], confidence_score=1.0, warnings=[]
+        )
+
+class TxtExtractor:
+    @staticmethod
+    def extract(file_path):
+        with open(file_path, "r", encoding="utf-8") as f:
+            text = f.read()
+        return ExtractionResult(
+            raw_text=text, file_type="txt", page_count=1,
+            line_metadata={}, formatting_notes={},
+            page_mapping=[], confidence_score=1.0, warnings=[]
         )
     #format and save 
 class ResultFormatter:

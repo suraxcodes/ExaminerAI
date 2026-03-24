@@ -1,2 +1,2 @@
-workin on rag using google gemini
-need to addd rag in project with embedding 
+creating /gsd:pause-work file to remainer what was i doing 
+testing is remaining

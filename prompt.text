@@ -1,0 +1,86 @@
+You are a senior Python engineer specializing in Retrieval-Augmented Generation (RAG) systems.
+
+I have a Python project that generates exam questions from textbooks using a pipeline that includes:
+
+* DocumentCleaner
+* StructuredDocumentBuilder
+* ImportanceScorer
+* SmartRetriever
+* LLMResponder
+
+Currently the pipeline contains a **hard-coded list of syllabus topics** like this:
+
+SYLLABUS_TOPICS = [
+"Common Network Attacks and Firewalls",
+"SQL Injection",
+"Authentication Methods",
+"Cryptography Basics",
+"Malware and Viruses",
+]
+
+This is a problem because the system should work with **any uploaded PDF**, not just cybersecurity textbooks.
+
+Your task is to modify the project so that **topics are automatically extracted from the uploaded document** instead of being hard-coded.
+
+Requirements:
+
+1. Remove the hard-coded `SYLLABUS_TOPICS` list from `mainPipeline.py`.
+
+2. Implement a function called `extract_topics(structured_doc, scorer, line_metadata)` that:
+
+   * Uses the output of `StructuredDocumentBuilder`
+   * Iterates through chapters and sections
+   * Uses `ImportanceScorer.score_topic()` to evaluate each section
+   * Keeps only topics with score above a threshold (for example >3)
+   * Returns a list of topic titles.
+
+3. Example function structure:
+
+```
+def extract_topics(structured_doc, scorer, line_metadata, max_topics=15):
+    topics = []
+
+    for chapter in structured_doc.chapters:
+        for section in chapter.sections:
+            score = scorer.score_topic(section, line_metadata or {})
+            if score > 3 and section.title:
+                topics.append(section.title)
+
+    topics = list(dict.fromkeys(topics))
+    return topics[:max_topics]
+```
+
+4. Modify the pipeline so that:
+
+Old logic:
+
+```
+for topic in SYLLABUS_TOPICS:
+    relevant_chunks = retriever.search(topic)
+```
+
+New logic:
+
+```
+topics = extract_topics(structured_doc, scorer, extraction_result.line_metadata)
+
+for topic in topics:
+    relevant_chunks = retriever.search(topic)
+```
+
+5. Ensure the system still works if headings are missing.
+   If no topics are extracted, fall back to paragraph-based topics using chunk titles.
+
+6. Keep the existing architecture intact:
+
+* Do NOT rewrite the entire project.
+* Only modify necessary parts of `mainPipeline.py`.
+
+7. The final output should:
+
+* show the updated `mainPipeline.py`
+* show the new `extract_topics()` function
+* explain the changes briefly.
+
+Goal:
+The system must automatically adapt to **any uploaded textbook (Cybersecurity, E-commerce, Networking, etc.)** without requiring manual topic lists.
