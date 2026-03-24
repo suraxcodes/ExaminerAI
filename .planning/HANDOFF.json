@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-03-25T00:46:15+05:30",
+  "phase": "03",
+  "phase_name": "reliability",
+  "phase_dir": ".planning/phases/03-reliability",
+  "plan": 1,
+  "task": 8,
+  "total_tasks": 8,
+  "status": "paused",
+  "completed_tasks": [
+    {"id": 1, "name": "Score Weight Calibration", "status": "done", "commit": "wip"},
+    {"id": 2, "name": "Topic Clustering and Study Mode", "status": "done", "commit": "wip"},
+    {"id": 3, "name": "Generalization Testing", "status": "done", "commit": "wip"},
+    {"id": 4, "name": "Past Paper Deduplication", "status": "done", "commit": "wip"},
+    {"id": 5, "name": "Loop Testing Pipeline", "status": "done", "commit": "wip"},
+    {"id": 6, "name": "Ollama Auto-Start", "status": "done", "commit": "wip"}
+  ],
+  "remaining_tasks": [
+    {"id": 7, "name": "Final UAT Validation", "status": "in_progress"},
+    {"id": 8, "name": "Merge Phase 3", "status": "not_started"}
+  ],
+  "blockers": [],
+  "human_actions_pending": [],
+  "decisions": [
+    {"decision": "Composite Score Calibration", "rationale": "Optimizing for recall + precision + top5_accuracy to ensure real-world exam relevance.", "phase": "03"},
+    {"decision": "Ollama Auto-Start using subprocess", "rationale": "Prevents 1-minute timeout blockers during generation by actively pinging port 11434 and silently spawning ollama serve via CREATE_NO_WINDOW if unresponsive.", "phase": "03"}
+  ],
+  "uncommitted_files": [
+    "src/mainPipeline.py",
+    "src/pastPaperProcessor.py",
+    "tests/test_reliability.py",
+    "tests/loop_test.py",
+    ".planning/STATE.md"
+  ],
+  "next_action": "Resume UAT validation and close out Phase 3 MVP Refactoring tasks.",
+  "context_notes": "We successfully patched 5 critical reliability issues (calibration, deduplication, testing, drift detection, and missing ollama autostart). The loop test effectively validated memory usage and stability over large document payloads."
+}
